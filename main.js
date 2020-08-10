@@ -33,6 +33,17 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+// const canvasSquares =  document.querySelectorAll("div.square.color-5")
+// canvasSquares.backgroundColor = 'blue'
+// console.dir(canvasSquares)
+// console.dir("color-5")
+const colorPalette =  document.querySelectorAll('section.palette')
+// console.dir(colorPalette)
+for(const item of colorPalette)[
+  console.log(item)
+]
+const brush =  document.querySelector('img.icon.brush-icon')
+
 
 
 /****************************
