@@ -37,12 +37,37 @@ while (count <= gridWidth * gridWidth) {
 // canvasSquares.backgroundColor = 'blue'
 // console.dir(canvasSquares)
 // console.dir("color-5")
-const colorPalette =  document.querySelectorAll('section.palette')
+
+const getColor = function(element){
+  return element.classList[1];
+}
+
+
+const handleClickSquare =  function (event) {
+  const square = event.target;
+  const brush = document.querySelector('.current-brush')
+  square.classList.replace(getColor(square), getColor(brush));
+}
+
+const squares = document.querySelectorAll('.square')
+
+for (const square of squares) {
+  square.addEventListener('click', handleClickSquare)
+}
+
+const handleClickPaletteColor = function (event) {
+  const brush = document.querySelector('.current-brush');
+  brush.classList.replace(getColor(brush), getColor(event.target));
+}
+
+const paletteColors = document.querySelectorAll('.palette-color')
+
 // console.dir(colorPalette)
-for(const item of colorPalette)[
-  console.log(item)
-]
-const brush =  document.querySelector('img.icon.brush-icon')
+for(const paletteColor of paletteColors){
+  paletteColor.addEventListener('click', handleClickPaletteColor)
+}
+
+
 
 
 
